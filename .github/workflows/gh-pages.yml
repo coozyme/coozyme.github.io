@@ -32,10 +32,10 @@ jobs:
       - name: Deploy
         run: npm run deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/gh-pages' }}
+        if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.SNYNK_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./build
 
       - name: Download artifact
         uses: actions/download-artifact@v2
